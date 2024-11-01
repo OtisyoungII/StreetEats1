@@ -11,16 +11,7 @@ import UserNotifications
 
 
 
-//func notifications(type: UINotificationFeedbackGenerator.FeedbackType) {
-//    let generator = UINotificationFeedbackGenerator()
-//    generator.notificationOccurred(type)
-//
-//}
-//
-//func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
-//    let generator = UIImpactFeedbackGenerator(style: style)
-//    generator.impactOccurred()
-//}
+
 
 struct mealTimer: View {
     
@@ -58,98 +49,76 @@ struct mealTimer: View {
             
             
             VStack{
-
+                
                 
                 ProgressView(value: currentPoints, total: 105)
                 if currentPoints == streetyAteAllDay {
                     ExtractedView(image: "IslandMove2")
-                
+                    
                 }
                 else {
                     Image("IslandHead")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 475,height: 500)
-
-                                                    .scaledToFit()
-                                                   .frame(width: 475,height: 500)
+                    
+                        .scaledToFit()
+                        .frame(width: 475,height: 500)
                     
                     
                     
                     
                     
-              
+                    
                     
                 }
                 Text("+5 Points")
                     .fontWeight(.heavy)
                     .foregroundStyle(.yellow)
                     .font(.largeTitle)
-                    
                 
-
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0..<1) {
-                            
-                            Text("Island \($0)")
-                            
-                            Image("IslandHead")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 475,height: 500)
-                            
-                                .scaledToFit()
-                                .frame(width: 475,height: 500)
-                            
-                            
-                            
-                            
-                        }
-                      
-//                            HStack {
-//                                
-//                                Image("IslandMove2")
-//                                    .resizable()
-//                                    .scaledToFit()
-//                                    .frame(width: 475,height: 500)
-//                                    .blur(radius: 5)
-//                            }
-//                            HStack {
-//                                Image("IslandMove3")
-//                                    .resizable()
-//                                    .scaledToFit()
-//                                    .frame(width: 475,height: 500)
-//                                    .blur(radius: 5)
-//                            }
-//                            HStack {
-//                                Image("IslandMove4")
-//                                    .resizable()
-//                                    .scaledToFit()
-//                                    .frame(width: 475,height: 500)
-//                                    .blur(radius: 5)
-//                            }
-//                        }
-                    }
-                }
-                    Button("Log Food Consumption") {
-                        currentPoints += 5
-                        showingAlert = true
-                        
-                    }
-                }
-                .alert("Time to eat!", isPresented: $showingAlert) {
-                    Button("Completed", role: .cancel) { }
-                    
-                    
-                    
-                    
+                
+                
+                //                ScrollView(.horizontal, showsIndicators: false) {
+                //                    HStack {
+                //                        ForEach(0..<1) {
+                //
+                //                            Text("Island \($0)")
+                //
+                //                            Image("IslandHead")
+                //                                .resizable()
+                //                                .scaledToFit()
+                //                                .frame(width: 475,height: 500)
+                //
+                //                                .scaledToFit()
+                //                                .frame(width: 475,height: 500)
+                //
+                //
+                //
+                //
+                //                        }
+                
+                
+                
+                
+                Button("Log Food Consumption") {
+                    currentPoints += 5
+                    showingAlert = true
                     
                 }
+            }
+            .alert("Time to eat!", isPresented: $showingAlert) {
+                Button("Completed", role: .cancel) { }
+                
+                
+                
+                
+                
             }
         }
     }
     
+}
     
 
 
@@ -167,7 +136,7 @@ struct ExtractedView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 475,height: 500)
-                .blur(radius: 5)
+                
             
         }
     }
